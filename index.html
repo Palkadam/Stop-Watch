@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div class="loader">
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+      <span style="--i:6;"></span>
+      <span style="--i:7;"></span>
+      <span style="--i:8;"></span>
+      <span style="--i:9;"></span>
+      <span style="--i:10;"></span>
+      <span style="--i:11;"></span>
+      <span style="--i:12;"></span>
+      <span style="--i:13;"></span>
+      <span style="--i:14;"></span>
+      <span style="--i:15;"></span>
+      <span style="--i:16;"></span>
+      <span style="--i:17;"></span>
+      <span style="--i:18;"></span>
+      <span style="--i:19;"></span>
+      <span style="--i:20;"></span>
+    </div> -->
+
+
+    <!-- Isometric Menu Hover Effects -->
+
+    <!-- <ul>
+        <li style="--i:6;"><a href="#">HOME</a></li>
+        <li style="--i:5;"><a href="#">About</a></li>
+        <li style="--i:4;"><a href="#">Services</a></li>
+        <li style="--i:3;"><a href="#">Protfolio</a></li>
+        <li style="--i:2;"><a href="#">Our Team</a></li>
+        <li style="--i:1;"><a href="#">Contact</a></li>
+    </ul> -->
+
+
+    <!-- STOP WATCH -->
+
+    <div class="container">
+        <div class="wrapper">
+            <p>
+                <span class="seconds">00</span> :
+                <span class="tens">00</span>
+            </p><br>
+
+            <button class="btn-start">Start</button>
+            <button class="btn-stop">Stop</button>
+            <button class="btn-reset">Reset</button>
+
+        </div>
+    </div>
+
+
+    <script>
+        let seconds = 00;
+        let tens = 00;
+        let getSeconds = document.querySelector('.seconds');
+        let getTens = document.querySelector('.tens');
+        let btnStart = document.querySelector('.btn-start');
+        let btnStop= document.querySelector('.btn-stop');
+        let btnReset = document.querySelector('.btn-reset');
+        let interval;
+
+        btnStart.addEventListener('click', ()=>{
+            inverval = setInterval(startTimer, 10)
+        })
+
+        btnStop.addEventListener('click', ()=>{
+            clearInterval(inverval);
+        })
+
+        btnReset.addEventListener('click', ()=>{
+            clearInterval(inverval);
+            tens = '00';
+            seconds = '00';
+            getSeconds.innerHTML = seconds;
+            getTens.innerHTML = tens;
+        })
+
+
+        function startTimer(){
+            tens++;
+            if(tens <= 9){
+                getTens.innerHTML= '0' + tens;
+            }
+            if(tens > 9){
+                getTens.innerHTML= tens;
+            }
+            if(tens > 99){
+                seconds++;
+                getSeconds.innerHTML= '0' + seconds;
+                tens = 0;
+                getTens.innerHTML= '0' + 0;
+            }
+            if(seconds > 9){
+                getSeconds.innerHTML= seconds;
+            }
+        }
+    </script>
+</body>
+</html>
